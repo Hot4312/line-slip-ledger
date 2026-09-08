@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>สมุดสลิป</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+  <header><div><p class="eyebrow">LINE SLIP LEDGER</p><h1>สมุดสลิป</h1><p>รวบรวม ตรวจสอบ และลงบัญชีจาก LINE กลุ่ม</p></div><button id="export">ดาวน์โหลด CSV</button></header>
+  <main>
+    <section class="stats"><article><span>รายการทั้งหมด</span><strong id="total">0</strong></article><article><span>รอตรวจสอบ</span><strong id="pending">0</strong></article><article><span>ยอดยืนยันแล้ว</span><strong id="sum">฿0.00</strong></article></section>
+    <section class="toolbar"><input id="search" placeholder="ค้นหาชื่อ ธนาคาร เลขอ้างอิง…"><select id="filter"><option value="">ทุกสถานะ</option><option value="pending">รอตรวจสอบ</option><option value="confirmed">ยืนยันแล้ว</option><option value="rejected">ไม่ใช่รายการ</option></select></section>
+    <section id="empty" class="empty"><div>◎</div><h2>ยังไม่มีสลิป</h2><p>เชิญ LINE Official Account เข้ากลุ่ม แล้วส่งรูปสลิปเข้ามา</p></section>
+    <section id="list" class="list"></section>
+  </main>
+  <dialog id="editor"><form method="dialog"><button class="close" value="cancel">×</button><div class="edit-grid"><img id="preview"><div><h2>ตรวจสอบสลิป</h2><label>จำนวนเงิน (บาท)<input id="amount" type="number" min="0" step="0.01"></label><label>วันที่และเวลาโอน<input id="transferAt" type="datetime-local"></label><label>ธนาคาร<input id="bank"></label><label>เลขอ้างอิง<input id="reference"></label><label>หมายเหตุ<textarea id="note"></textarea></label><div class="actions"><button type="button" id="reject" class="muted">ไม่ใช่รายการ</button><button type="button" id="save">บันทึกและยืนยัน</button></div></div></div></form></dialog>
+  <script src="/app.js"></script>
+</body></html>
